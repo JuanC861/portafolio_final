@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Cabrera — Diseñador Gráfico</title>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="scanlines"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="logo">Juan Cabrera</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Sobre mí</a></li>
+      <li><a href="#work">Trabajos</a></li>
+      <li><a href="#contact">Contacto</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="top"></div>
+
+<header class="hero wrap">
+  <div>
+    <p class="eyebrow">Jugador: Juan Cabrera</p>
+    <h1>Diseño gráfico con <span class="hl">alma retro</span> para marcas que quieren verse claras.</h1>
+    <p>Diseñador gráfico enfocado en identidad visual, flyers y maquetación web para empresas B2B. Fuera del horario de oficina, programo cositas y veo cómo mis proyectos personales le suman carácter a mi trabajo.</p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn">Ver trabajos</a>
+      <a href="#contact" class="btn ghost">Hablemos</a>
+    </div>
+    <p class="press-start"><span class="blink">▍</span>CONÓCEME</p>
+  </div>
+
+  <div class="hero-panel pixel-frame">
+    <p class="tag mono">// JUAN CABRERA</p>
+    <div class="avatar-box">
+      <span>[ FOTO / AVATAR AQUÍ ]</span>
+    </div>
+    <div class="stats">
+      <span>CLASE: Diseñador Gráfico</span>
+      <span>NIVEL: Jr.</span>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <p class="eyebrow">01 · SOBRE MÍ</p>
+    <h2 class="section-title">Un diseñador que programa, hace voces y juega demasiado.</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Trabajo como <strong>diseñador gráfico en una empresa B2B</strong>, donde me encargo de retoque fotográfico, flyers y piezas de maquetación web, siempre en conjunto con el equipo de desarrollo. Me gusta que el diseño resuelva problemas reales antes que verse solo "bonito".</p>
+        <p>Cuando no estoy diseñando, ando programando por diversión, practicando voces para doblaje, o metido en algún videojuego. También llevo un canal de YouTube donde hablo de videojuegos, y estudio mandarín cada semana — sí, con calma, pero con constancia.</p>
+        <div class="fact-row">
+        Disponible para proyectos freelance y colaboraciones
+        </div>
+      </div>
+
+      <div class="stat-card pixel-frame">
+        <h3>MIS HABILIDADES</h3>
+        <div class="stat">
+          <div class="stat-label"><span>Flyers & Maquetación</span><span>90%</span></div>
+          <div class="stat-bar"><div class="stat-fill" style="width:90%"></div></div>
+        </div>
+        <div class="stat">
+          <div class="stat-label"><span>Branding & Identidad</span><span>80%</span></div>
+          <div class="stat-bar"><div class="stat-fill" style="width:80%"></div></div>
+        </div>
+        <div class="stat">
+          <div class="stat-label"><span>Diseño web (UX/UI)</span><span>75%</span></div>
+          <div class="stat-bar"><div class="stat-fill" style="width:75%"></div></div>
+        </div>
+        <div class="stat">
+          <div class="stat-label"><span>Coding (por diversión)</span><span>45%</span></div>
+          <div class="stat-bar"><div class="stat-fill" style="width:45%"></div></div>
+        </div>
+        <div class="stat">
+          <div class="stat-label"><span>Doblaje y Voces</span><span>25%</span></div>
+          <div class="stat-bar"><div class="stat-fill" style="width:25%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="background:var(--bg-alt);">
+  <div class="wrap">
+    <p class="eyebrow">02 · TRABAJOS</p>
+    <h2 class="section-title">Selecciona un cartucho</h2>
+    <p class="section-sub">Una muestra de las áreas en las que trabajo.</p>
+
+    <div class="work-grid">
+      <div class="work-card pixel-frame clickable" data-gallery="flyers" onclick="openGallery('flyers')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('flyers');}">
+        <div class="card-thumb"><img src="imagenes/flyer1.webp" alt="Flyers & Maquetación"></div>
+        <h3>Flyers & Maquetación</h3>
+        <p>Diseño de flyers, banners y material promocional pensado para comunicar rápido y claro.</p>
+        <div class="tag-row"><span class="pill">Illustrator</span><span class="pill">Photoshop</span><span class="pill">Retoque</span></div>
+      </div>
+
+      <div class="work-card pixel-frame clickable" data-gallery="branding" onclick="openGallery('branding')" role="button" tabindex="0">
+        <div class="card-thumb"><span class="picon-wrap picon" data-icon="camera" data-color="var(--coral)" data-scale="5"></span></div>
+        <h3>Branding e Identidad</h3>
+        <p>Identidades visuales completas: logo, paleta, tipografía y firmas animadas (GIF).</p>
+        <div class="tag-row"><span class="pill">Illustrador</span><span class="pill">Branding</span><span class="pill">GIFs</span></div>
+      </div>
+
+      <div class="work-card pixel-frame clickable" data-gallery="uxui" onclick="openGallery('uxui')" role="button" tabindex="0">
+        <div class="card-thumb"><img src="imagenes/thumb_ecuamia.jpeg" alt="UX/UI & Casos de Estudio"></div>
+        <h3>UX/UI & Casos de Estudio</h3>
+        <p>Diseño de interfaces y experiencia de usuario, todo contado en mis casos de estudio.</p>
+        <div class="tag-row"><span class="pill">Figma</span><span class="pill">UX/UI</span><span class="pill">PDF</span></div>
+      </div>
+
+      <div class="work-card pixel-frame">
+        <div class="card-thumb"><span class="picon-wrap picon" data-icon="code" data-color="var(--amber)" data-scale="5"></span></div>
+        <h3>Doblaje y Voces</h3>
+        <p>Guion y voz para dobles y narraciones en mi canal de YouTube 'puggito' — el lado más performático de mi creatividad.</p>
+        <div class="tag-row"><span class="pill">Doblaje</span><span class="pill">Guion</span></div>
+      </div>
+
+      <a href="https://www.youtube.com/@puggito-j2r" target="_blank" rel="noopener" class="work-card bonus-card pixel-frame" style="text-decoration: none;">
+        <div class="card-thumb">
+          <img src="imagenes/puggito-canal.png" alt="Canal de YouTube puggito">
+        </div>
+        <div class="bonus-copy">
+          <p class="eyebrow" style="margin-bottom:8px;">NIVEL BONUS</p>
+          <h3>Puggito — mi canal de YouTube</h3>
+          <p>Además del diseño, hago contenido sobre videojuegos en mi canal "puggito". Un espacio donde mezclo mi lado creativo con mi lado gamer.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <p class="eyebrow">03 · CONTINUAR?</p>
+    <h2 class="section-title">¿Hacemos algo juntos?</h2>
+    <p class="section-sub">Cuéntame sobre tu proyecto — flyers, branding o una web nueva. Respondo rápido.</p>
+
+    <div class="contact-panel pixel-frame">
+      <div>
+        <h3>Insertar moneda para continuar</h3>
+        <p>Estoy disponible para proyectos freelance de diseño gráfico y colaboraciones puntuales.</p>
+        <a href="mailto:juan.cabrera081601@gmail.com" class="btn">Enviar correo</a>
+      </div>
+      <div class="contact-side">
+        <ul class="contact-list">
+          <li><span class="picon" data-icon="mail" data-color="var(--cyan)" data-scale="1.5"></span> <a href="mailto:juan.cabrera081601@gmail.com">juan.cabrera081601@gmail.com</a></li>
+          <li><span class="picon" data-icon="monitor" data-color="var(--cyan)" data-scale="1.5"></span> <a href="#">behance.net/juanito</a></li>
+          <li><span class="picon" data-icon="dog" data-color="var(--cyan)" data-scale="1.5"></span> <a href="https://www.youtube.com/@puggito-j2r">YouTube · puggito</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+  © 2026 Juan Cabrera
+  </div>
+</footer>
+
+<!-- Galería Modal -->
+<div class="modal-backdrop" id="galleryModal" onclick="if(event.target===this) closeGallery()">
+  <div class="modal-panel pixel-frame">
+    <div class="modal-header">
+      <div>
+        <h3 id="galleryTitle">Galería</h3>
+        <p id="galleryDesc"></p>
+      </div>
+      <button class="modal-close" onclick="closeGallery()">✕ Cerrar</button>
+    </div>
+
+    <!-- Pestañas de Filtro -->
+    <div class="gallery-tabs">
+      <button class="tab-btn active" id="tabImages" onclick="switchTab('images')">Imágenes</button>
+       <button class="tab-btn" id="tabVideos" onclick="switchTab('videos')">Vídeos</button>
+        <button class="tab-btn" id="tabDocs" onclick="switchTab('docs')">Casos (PDF)</button>
+        <button class="tab-btn" id="tabGifs" onclick="switchTab('gifs')">Firmas (GIF)</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</div>
+
+<!-- Lightbox (Imagen ampliada) -->
+<div class="lightbox-backdrop" id="lightboxModal" onclick="if(event.target===this) closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕ Cerrar</button>
+  
+  <!-- Botones de navegación -->
+  <button class="lightbox-nav prev" onclick="changeLightboxImage(-1)" aria-label="Imagen anterior">❮</button>
+  <button class="lightbox-nav next" onclick="changeLightboxImage(1)" aria-label="Siguiente imagen">❯</button>
+
+  <div class="lightbox-img-wrap">
+    <img id="lightboxImg" src="" alt="Imagen ampliada">
+  </div>
+</div>
+
+<!-- Lógica JS -->
+<script src="js/main.js" defer></script>
+</body>
+</html>
