@@ -159,7 +159,8 @@ const GALLERIES = {
       "imagenes/flyer17.webp",
       "imagenes/flyer18.webp",
       "imagenes/flyer19.webp",
-      "imagenes/flyer20.webp"
+      "imagenes/flyer20.webp",
+      "imagenes/flyer21.webp"
     ],
         videos: [
           { url: "https://www.youtube.com/embed/JyQF7zDu4MA", aspect: "horizontal" },
@@ -182,28 +183,70 @@ const GALLERIES = {
         name: "Caso de Estudio: EcuaMia Flowers", 
         url: "casos_de_estudio/Caso de Estudio - EcuaMia Flowers.pdf",
         thumb: "imagenes/thumb_ecuamia.jpeg" 
-      },
-      { 
-        name: "Rediseño E-commerce Florex", 
-        url: "casos_de_estudio/rediseño-florex.pdf",
-        thumb: "imagenes/portada-florex.webp"
       }
     ]
   },
   branding: {
     title: "Branding e Identidad",
     desc: "Diseño de marcas y firmas animadas.",
-    images: ["imagenes/logo1.webp", "imagenes/logo2.webp"], 
+    banners: [
+      "branding_imagenes/easter_banner.webp",
+      "branding_imagenes/ppf_banner.webp",
+      "branding_imagenes/mother_banner.webp",
+      "branding_imagenes/spring_banner.webp",
+      "branding_imagenes/summer_banner.webp"
+    ], 
     videos: [],
     gifs: [
-      "imagenes/firma1.gif",
-      "imagenes/firma2.gif"
+      "firmas_gif/firma_easter_hq.gif",
+      "firmas_gif/firma_fall_2026_hq.gif",
+      "firmas_gif/firma_navidad_hq.gif",
+      "firmas_gif/firma_new_year_2026_hq.gif",
+      "firmas_gif/firma_spring_2026_hq.gif",
+      "firmas_gif/firma_summer_2026_hq.gif",
+      "firmas_gif/firma_easter_2025_hq.gif",
+      "firmas_gif/firma_mother_2025_hq.gif",
+      "firmas_gif/firma_attar_2026_hq.gif"
+
+    ]
+  },
+  doblaje: {
+    title: "Doblaje y YouTube",
+    desc: "Prácticas de doblaje, fandubs y contenido para YouTube.",
+    doblaje_videos: [
+      {
+        title: "Práctica de Doblaje: El Increible Castillo del Vagabundo",
+        desc: "Interpreté a Howl Jenkins Pendragon. Enfocado en sincronización labial y modulación de tonos suave.",
+        url: "https://drive.google.com/file/d/17_HR9QjKkaY8n87Vp8aLAPDOyOQ2hItd/preview",
+        aspect: "horizontal"
+      },
+      {
+        title: "Práctica de Doblaje: El Increible Castillo del Vagabundo (Parte 2)",
+        desc: "Segunda escena interpretando a Howl. Trabajo de proyección, manejo de pausas e intención dramática del personaje.",
+        url: "https://drive.google.com/file/d/1c-FN1ybpl7XIF7ccXqdqvFnxpfAFdpO_/preview",
+        aspect: "horizontal"
+      },
+      {
+        title: "Toy Story — Práctica Woody",
+        desc: "Interpreté al comisario Woody. Ejercicio enfocado en energía alta, cambios de ritmo rápidos y matices vocales de frustración y liderazgo.",
+        url: "https://drive.google.com/file/d/143_Ap0q05SZLrthyM59ETs9HAYsw3ZRl/preview",
+        aspect: "horizontal"
+      },
+      {
+        title: "The Legend of Zelda - Relato & Cinemática",
+        desc: "Locución en off, guion, edición de video e integración de elementos en 3D. Trabajo de ritmo cinematográfico, diseño sonoro envolvente y tono solemne.",
+        url: "https://drive.google.com/file/d/1QnQsAsU0U2AqPzhA3pnsUcnqAgshvHuL/preview",
+        aspect: "horizontal"
+      }
     ]
   }
 };
 let currentGalleryKey = null;
 let currentTab = 'images';
 let currentImageIndex = 0;
+
+// Variable para la posición del carrusel de branding
+let currentCarouselIndex = 0;
 
 function openGallery(key){
   const gallery = GALLERIES[key];
@@ -213,16 +256,17 @@ function openGallery(key){
   galleryTitle.textContent = gallery.title;
   galleryDesc.textContent = gallery.desc || "";
 
-  // Determinar qué pestaña abrir por defecto basado en lo que tiene la galería
   let defaultTab = 'images';
-  if (gallery.images && gallery.images.length > 0) {
+  if (key === 'branding') {
+    defaultTab = 'gifs';
+  } else if (key === 'doblaje') {
+    defaultTab = 'doblaje_videos';
+  } else if (gallery.images && gallery.images.length > 0) {
     defaultTab = 'images';
   } else if (gallery.videos && gallery.videos.length > 0) {
     defaultTab = 'videos';
   } else if (gallery.docs && gallery.docs.length > 0) {
     defaultTab = 'docs';
-  } else if (gallery.gifs && gallery.gifs.length > 0) {
-    defaultTab = 'gifs';
   }
 
   switchTab(defaultTab);
@@ -236,23 +280,63 @@ function switchTab(type){
   const gallery = GALLERIES[currentGalleryKey];
   if(!gallery) return;
 
-  // Actualizar botones de pestaña
-  document.getElementById('tabImages').classList.toggle('active', type === 'images');
-  document.getElementById('tabVideos').classList.toggle('active', type === 'videos');
-  document.getElementById('tabDocs').classList.toggle('active', type === 'docs');
-  document.getElementById('tabGifs').classList.toggle('active', type === 'gifs');
+  // Lista de todos los botones de pestaña
+  const tabs = {
+    gifs: document.getElementById('tabGifs'),
+    branding: document.getElementById('tabBranding'),
+    banners: document.getElementById('tabBanners'),
+    images: document.getElementById('tabImages'),
+    videos: document.getElementById('tabVideos'),
+    doblaje_videos: document.getElementById('tabDoblaje'),
+    docs: document.getElementById('tabDocs')
+  };
 
-  // Mostrar/Ocultar botones según disponibilidad de contenido en esta galería
-  document.getElementById('tabImages').style.display = (gallery.images && gallery.images.length) ? 'block' : 'none';
-  document.getElementById('tabVideos').style.display = (gallery.videos && gallery.videos.length) ? 'block' : 'none';
-  document.getElementById('tabDocs').style.display = (gallery.docs && gallery.docs.length) ? 'block' : 'none';
-  document.getElementById('tabGifs').style.display = (gallery.gifs && gallery.gifs.length) ? 'block' : 'none';
+  for (const [k, btn] of Object.entries(tabs)) {
+    if (!btn) continue;
+    btn.classList.toggle('active', type === k);
+    btn.style.display = (gallery[k] && gallery[k].length > 0) ? 'block' : 'none';
+  }
 
   galleryGrid.innerHTML = "";
   galleryGrid.setAttribute('data-tab', type);
   const fragment = document.createDocumentFragment();
 
-  if(type === 'images'){
+  // 1. Pestaña BRANDING (Carrusel)
+  if(type === 'branding'){
+    currentCarouselIndex = 0;
+    const carouselWrap = document.createElement('div');
+    carouselWrap.className = 'branding-carousel pixel-frame';
+    carouselWrap.innerHTML = `
+      <div class="carousel-view">
+        <img id="carouselImg" src="${gallery.branding[0]}" alt="${gallery.title}">
+      </div>
+      <div class="carousel-nav-bar">
+        <button type="button" class="btn ghost btn-car" onclick="moveCarousel(-1, 'branding')">❮ Anterior</button>
+        <span class="carousel-count mono" id="carouselCounter">1 / ${gallery.branding.length}</span>
+        <button type="button" class="btn ghost btn-car" onclick="moveCarousel(1, 'branding')">Siguiente ❯</button>
+      </div>
+    `;
+    fragment.appendChild(carouselWrap);
+
+  // 2. Pestaña BANNERS WEB (Carrusel panorámico)
+  } else if(type === 'banners'){
+    currentCarouselIndex = 0;
+    const carouselWrap = document.createElement('div');
+    carouselWrap.className = 'branding-carousel pixel-frame';
+    carouselWrap.innerHTML = `
+      <div class="carousel-view">
+        <img id="carouselImg" src="${gallery.banners[0]}" alt="${gallery.title}">
+      </div>
+      <div class="carousel-nav-bar">
+        <button type="button" class="btn ghost btn-car" onclick="moveCarousel(-1, 'banners')">❮ Anterior</button>
+        <span class="carousel-count mono" id="carouselCounter">1 / ${gallery.banners.length}</span>
+        <button type="button" class="btn ghost btn-car" onclick="moveCarousel(1, 'banners')">Siguiente ❯</button>
+      </div>
+    `;
+    fragment.appendChild(carouselWrap);
+
+  // 3. Pestaña IMÁGENES (Galería normal para Flyers)
+  } else if(type === 'images'){
     (gallery.images || []).forEach((src, index) => {
       const btn = document.createElement('button');
       btn.className = 'gallery-thumb';
@@ -268,10 +352,11 @@ function switchTab(type){
       btn.appendChild(img);
       fragment.appendChild(btn);
     });
+
+  // 4. Pestaña VÍDEOS
   } else if(type === 'videos'){
     (gallery.videos || []).forEach((videoData) => {
       const container = document.createElement('div');
-      
       const videoSrc = typeof videoData === 'string' ? videoData : videoData.url;
       const isVertical = typeof videoData === 'object' && videoData.aspect === 'vertical';
 
@@ -286,7 +371,9 @@ function switchTab(type){
       container.appendChild(iframe);
       fragment.appendChild(container);
     });
-    } else if(type === 'docs'){
+
+  // 5. Pestaña DOCUMENTOS (PDF)
+  } else if(type === 'docs'){
     (gallery.docs || []).forEach((doc) => {
       const card = document.createElement('a');
       card.href = doc.url;
@@ -315,23 +402,63 @@ function switchTab(type){
       }
       fragment.appendChild(card);
     });
+
+  // 6. Pestaña FIRMAS (GIF)
   } else if(type === 'gifs'){
     (gallery.gifs || []).forEach((src) => {
       const container = document.createElement('div');
       container.className = 'gif-card pixel-frame';
-      
+    
       const img = document.createElement('img');
       img.src = src;
       img.alt = "Firma Animada";
       img.style.width = "100%";
       img.style.display = "block";
-      
+    
       container.appendChild(img);
       fragment.appendChild(container);
+    });
+  } else if(type === 'doblaje_videos'){
+    (gallery.doblaje_videos || []).forEach((item) => {
+      const card = document.createElement('div');
+      const isVertical = item.aspect === 'vertical';
+      card.className = 'doblaje-card pixel-frame' + (isVertical ? ' vertical' : '');
+
+      card.innerHTML = `
+        <div class="doblaje-video-wrap">
+          <iframe src="${item.url}" title="${item.title || 'Video'}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="doblaje-info">
+          <h4>${item.title || 'Práctica de Voz'}</h4>
+          <p>${item.desc || ''}</p>
+        </div>
+      `;
+
+      fragment.appendChild(card);
     });
   }
 
   galleryGrid.appendChild(fragment);
+}
+
+function moveCarousel(dir, arrayKey) {
+  const gallery = GALLERIES[currentGalleryKey];
+  if(!gallery || !gallery[arrayKey]) return;
+
+  const items = gallery[arrayKey];
+  currentCarouselIndex += dir;
+
+  if (currentCarouselIndex >= items.length) {
+    currentCarouselIndex = 0;
+  } else if (currentCarouselIndex < 0) {
+    currentCarouselIndex = items.length - 1;
+  }
+
+  const img = document.getElementById('carouselImg');
+  const counter = document.getElementById('carouselCounter');
+
+  if(img) img.src = items[currentCarouselIndex];
+  if(counter) counter.textContent = `${currentCarouselIndex + 1} / ${items.length}`;
 }
 
 function closeGallery(){
@@ -382,6 +509,8 @@ function closeLightbox(){
   lightboxModal.classList.remove('open');
   lightboxImg.src = "";
 }
+
+
 
 document.addEventListener('keydown', (e) => {
   if(e.key === 'Escape'){
