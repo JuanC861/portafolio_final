@@ -20,10 +20,16 @@
   <div class="nav-inner">
     <a href="#top" class="logo">Juan Cabrera</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about">Sobre mí</a></li>
-      <li><a href="#work">Trabajos</a></li>
-      <li><a href="#contact">Contacto</a></li>
+      <li><a href="#about" data-i18n="nav-about">Sobre mí</a></li>
+      <li><a href="#work" data-i18n="nav-work">Trabajos</a></li>
+      <li><a href="#contact" data-i18n="nav-contact">Contacto</a></li>
     </ul>
+    
+    <!-- Selector de Idioma -->
+    <button class="lang-toggle mono" id="langToggle" type="button" aria-label="Cambiar idioma">
+      <span class="active-lang" id="currentLangLabel">ES</span> / <span>EN</span>
+    </button>
+
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -34,14 +40,14 @@
 
 <header class="hero wrap">
   <div>
-    <p class="eyebrow">Jugador: Juan Cabrera</p>
-    <h1>Diseño visual <span class="hl">claro</span> y maquetación web con criterio técnico para entornos B2B.</h1>
-    <p>Especializado en identidad de marca, material comercial e interfaces digitales. Conecto el criterio gráfico con la lógica de desarrollo frontend para entregar soluciones visuales funcionales, ordenadas y listas para producción.</p>
+    <p class="eyebrow" data-i18n="hero-player">Jugador: Juan Cabrera</p>
+    <h1 data-i18n="hero-title">Diseño visual <span class="hl">claro</span> y maquetación web con criterio técnico para entornos B2B.</h1>
+    <p data-i18n="hero-desc">Especializado en identidad de marca, material comercial e interfaces digitales. Conecto el criterio gráfico con la lógica de desarrollo frontend para entregar soluciones visuales funcionales, ordenadas y listas para producción.</p>
     <div class="hero-ctas">
-      <a href="#work" class="btn">Ver trabajos</a>
-      <a href="#contact" class="btn ghost">Contactar</a>
+      <a href="#work" class="btn" data-i18n="hero-btn-work">Ver trabajos</a>
+      <a href="#contact" class="btn ghost" data-i18n="hero-btn-contact">Contactar</a>
     </div>
-    <p class="press-start"><span class="blink">▼  </span> CONOCE MI PERFIL</p>
+    <p class="press-start"><span class="blink">▼  </span> <span data-i18n="hero-press-start">CONOCE MI PERFIL</span></p>
   </div>
 
   <div class="hero-panel pixel-frame">
@@ -50,47 +56,44 @@
       <img src="imagenes/Juan1.jpg" alt="Foto de Juan Cabrera" class="avatar">
     </div>
     <div class="stats">
-      <span>ROL: <hr>
-        Diseñador Multimedia</span>
-      <span>ESPECIALIDAD: <hr>
-        UI / Branding B2B</span>
+      <span data-i18n="hero-stat-role">ROL: <hr>Diseñador Multimedia</span>
+      <span data-i18n="hero-stat-spec">ESPECIALIDAD: <hr>UI / Branding B2B</span>
     </div>
   </div>
 </header>
 
 <section id="about">
   <div class="wrap">
-    <p class="eyebrow">01 · PERFIL</p>
-    <h2 class="section-title">Criterio visual, puente técnico con desarrollo y narrativa multimedia.</h2>
+    <p class="eyebrow" data-i18n="about-eyebrow">01 · PERFIL</p>
+    <h2 class="section-title" data-i18n="about-title">Criterio visual, puente técnico con desarrollo y narrativa multimedia.</h2>
 
     <div class="about-grid">
       <div class="about-text">
-        <p>Cuento con experiencia en <strong>diseño dentro del sector B2B</strong>, donde me he encargado del desarrollo de piezas comerciales, identidad visual, retoque fotográfico de producto y maquetación web en estrecha coordinación con equipos de desarrollo. Mi enfoque no es solo que una pieza luzca bien, sino que resuelva una necesidad clara de comunicación o conversión.</p>
-        <p>Cuento con bases sólidas de programación frontend y herramientas de maquetación, lo que me permite crear interfaces factibles, optimizar flujos de trabajo y hablar el mismo lenguaje técnico con los desarrolladores. Además, complemento mi perfil con proyectos de locución, guion y creación de contenido digital, aportando una visión integral de comunicación y storytelling.</p>
-        <div class="fact-row">
+        <p data-i18n="about-p1">Cuento con experiencia en <strong>diseño dentro del sector B2B</strong>, donde me he encargado del desarrollo de piezas comerciales, identidad visual, retoque fotográfico de producto y maquetación web en estrecha coordinación con equipos de desarrollo. Mi enfoque no es solo que una pieza luzca bien, sino que resuelva una necesidad clara de comunicación o conversión.</p>
+        <p data-i18n="about-p2">Cuento con bases sólidas de programación frontend y herramientas de maquetación, lo que me permite crear interfaces factibles, optimizar flujos de trabajo y hablar el mismo lenguaje técnico con los desarrolladores. Además, complemento mi perfil con proyectos de locución, guion y creación de contenido digital, aportando una visión integral de comunicación y storytelling.</p>
+        <div class="fact-row" data-i18n="about-available">
         ● Disponible para roles a tiempo completo, proyectos freelance y colaboraciones.
         </div>
       </div>
 
       <div class="stat-card pixel-frame">
-        <h3>MIS HABILIDADES</h3>
+        <h3 data-i18n="skills-title">MIS HABILIDADES</h3>
         <div class="stat">
-          <div class="stat-label"><span>Diseño y Brading</span><span>AVANZADO</span></div>
+          <div class="stat-label"><span data-i18n="skill-branding">Diseño y Branding</span><span data-i18n="level-adv">AVANZADO</span></div>
           <div class="stat-bar"><div class="stat-fill" style="width:100%"></div></div>
         </div>
         <div class="stat">
-          <div class="stat-label"><span>UI & Experiencia Web</span><span>PROFICIENTE</span></div>
+          <div class="stat-label"><span data-i18n="skill-web">UI & Experiencia Web</span><span data-i18n="level-prof">PROFICIENTE</span></div>
           <div class="stat-bar"><div class="stat-fill" style="width:80%"></div></div>
         </div>
         <div class="stat">
-          <div class="stat-label"><span>Producción Multimedia</span><span>ENFOQUE COMPLEMENTARIO</span></div>
+          <div class="stat-label"><span data-i18n="skill-media">Producción Multimedia</span><span data-i18n="level-comp">ENFOQUE COMPLEMENTARIO</span></div>
           <div class="stat-bar"><div class="stat-fill" style="width:70%"></div></div>
         </div>
         <div class="stat">
-          <div class="stat-label"><span>Integración FrontEnd</span><span>TÉCNICO / ENTORNO DEV</span></div>
+          <div class="stat-label"><span data-i18n="skill-frontend">Integración FrontEnd</span><span data-i18n="level-tech">TÉCNICO / ENTORNO DEV</span></div>
           <div class="stat-bar"><div class="stat-fill" style="width:60%"></div></div>
         </div>
-        
       </div>
     </div>
   </div>
@@ -98,49 +101,45 @@
 
 <section id="work" style="background:var(--bg-alt);">
   <div class="wrap">
-    <p class="eyebrow">02 · SELECCIÓN DE TRABAJOS</p>
-    <h2 class="section-title">Casos de estudio y áreas de trabajo</h2>
-    <p class="section-sub">Una selección de proyectos comerciales, diseño digital y soluciones visuales.</p>
+    <p class="eyebrow" data-i18n="work-eyebrow">02 · SELECCIÓN DE TRABAJOS</p>
+    <h2 class="section-title" data-i18n="work-title">Casos de estudio y áreas de trabajo</h2>
+    <p class="section-sub" data-i18n="work-sub">Una selección de proyectos comerciales, diseño digital y soluciones visuales.</p>
 
     <div class="work-grid">
       <div class="work-card pixel-frame clickable" data-gallery="flyers" onclick="openGallery('flyers')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('flyers');}">
         <div class="card-thumb"><img src="imagenes/flyer1.webp" alt="Flyers & Maquetación"></div>
-        <h3>Flyers & Material Comercial</h3>
-        <p>Diseño publicitario y material promocional B2B enfocado en jerarquía de información y conversión clara.</p>
+        <h3 data-i18n="card-flyers-h3">Flyers & Material Comercial</h3>
+        <p data-i18n="card-flyers-p">Diseño publicitario y material promocional B2B enfocado en jerarquía de información y conversión clara.</p>
         <div class="tag-row"><span class="pill">Adobe Illustrator</span><span class="pill">Photoshop</span><span class="pill">B2B</span></div>
       </div>
 
       <div class="work-card pixel-frame clickable" data-gallery="branding" onclick="openGallery('branding')" role="button" tabindex="0">
         <div class="card-thumb"><img src="branding_imagenes/easter_banner.webp"></div>
-        <h3>Identidad Visual & Branding</h3>
-        <p>Sistemas visuales integrales: logotipos, paletas tipográficas, manuales de marca y assets digitales.</p>
-        <div class="tag-row"><span class="pill">Branding</span><span class="pill">Animación</span><span class="pill">Estrategia</span></div>
+        <h3 data-i18n="card-brand-h3">Identidad Visual & Branding</h3>
+        <p data-i18n="card-brand-p">Sistemas visuales integrales: logotipos, paletas tipográficas, manuales de marca y assets digitales.</p>
+        <div class="tag-row"><span class="pill">Branding</span><span class="pill" data-i18n="tag-anim">Animación</span><span class="pill" data-i18n="tag-strat">Estrategia</span></div>
       </div>
 
       <div class="work-card pixel-frame clickable" data-gallery="uxui" onclick="openGallery('uxui')" role="button" tabindex="0">
         <div class="card-thumb"><img src="imagenes/thumb_ecuamia.jpeg" alt="UX/UI & Casos de Estudio"></div>
-        <h3>Diseño Web & Casos de Estudio</h3>
-        <p>Rediseño de interfaces, experiencia de usuario y arquitectura de información documentada paso a paso.</p>
-        <div class="tag-row"><span class="pill">Figma</span><span class="pill">UX/UI</span><span class="pill">Maquetación</span></div>
+        <h3 data-i18n="card-uxui-h3">Diseño Web & Casos de Estudio</h3>
+        <p data-i18n="card-uxui-p">Rediseño de interfaces, experiencia de usuario y arquitectura de información documentada paso a paso.</p>
+        <div class="tag-row"><span class="pill">Figma</span><span class="pill">UX/UI</span><span class="pill" data-i18n="tag-layout">Maquetación</span></div>
       </div>
 
       <div class="work-card pixel-frame clickable" data-gallery="doblaje" onclick="openGallery('doblaje')" role="button" tabindex="0">
-        <div class="card-thumb">
-          <img src="imagenes/foto_doblaje.jpg" alt="Doblaje y Voces">
-          </div>
-       <h3>Producción Multimedia & Audio</h3>
-        <p>Guion, locución y narración digital para canales de difusión, explorando el lado narrativo del contenido.</p>
-        <div class="tag-row"><span class="pill">Doblaje</span><span class="pill">Guion</span><span class="pill">Fandub</span></div>
+        <div class="card-thumb"><img src="imagenes/foto_doblaje.jpg" alt="Doblaje y Voces"></div>
+        <h3 data-i18n="card-media-h3">Producción Multimedia & Audio</h3>
+        <p data-i18n="card-media-p">Guion, locución y narración digital para canales de difusión, explorando el lado narrativo del contenido.</p>
+        <div class="tag-row"><span class="pill" data-i18n="tag-dub">Doblaje</span><span class="pill" data-i18n="tag-script">Guion</span><span class="pill">Fandub</span></div>
       </div>
 
       <a href="https://www.youtube.com/@puggito-j2r" target="_blank" rel="noopener" class="work-card bonus-card pixel-frame" style="text-decoration: none;">
-        <div class="card-thumb">
-          <img src="imagenes/puggito-canal.png" alt="Canal de YouTube puggito">
-        </div>
+        <div class="card-thumb"><img src="imagenes/puggito-canal.png" alt="Canal de YouTube puggito"></div>
         <div class="bonus-copy">
-          <p class="eyebrow" style="margin-bottom:8px;">PROYECTO PARALELO // CANAL DIGITAL</p>
-          <h3>Puggito — Creación de contenido y narrativa</h3>
-          <p>En paralelo a mi rol como diseñador, produzco y edito ensayos en video sobre narrativa interactiva y diseño en YouTube. Un espacio donde pongo a prueba guion, edición audiovisual, diseño sonoro y comunicación de ideas complejas.</p>
+          <p class="eyebrow" style="margin-bottom:8px;" data-i18n="card-bonus-eyebrow">PROYECTO PARALELO // CANAL DIGITAL</p>
+          <h3 data-i18n="card-bonus-h3">Puggito — Creación de contenido y narrativa</h3>
+          <p data-i18n="card-bonus-p">En paralelo a mi rol como diseñador, produzco y edito ensayos en video sobre narrativa interactiva y diseño en YouTube. Un espacio donde pongo a prueba guion, edición audiovisual, diseño sonoro y comunicación de ideas complejas.</p>
         </div>
       </a>
     </div>
@@ -149,15 +148,15 @@
 
 <section id="contact">
   <div class="wrap">
-    <p class="eyebrow">03 · CONTACTO</p>
-    <h2 class="section-title">¿Iniciamos un proyecto juntos?</h2>
-    <p class="section-sub">Conversemos sobre vacantes en tu equipo, necesidades de diseño de marca o nuevas interfaces web.</p>
+    <p class="eyebrow" data-i18n="contact-eyebrow">03 · CONTACTO</p>
+    <h2 class="section-title" data-i18n="contact-title">¿Iniciamos un proyecto juntos?</h2>
+    <p class="section-sub" data-i18n="contact-sub">Conversemos sobre vacantes en tu equipo, necesidades de diseño de marca o nuevas interfaces web.</p>
 
     <div class="contact-panel pixel-frame">
       <div>
-        <h3>Insertar moneda para continuar</h3>
-        <p>Abierto a oportunidades laborales remotas, híbridas y colaboraciones freelance puntuales.</p>
-        <a href="mailto:juan.cabrera081601@gmail.com" class="btn">Enviar un correo</a>
+        <h3 data-i18n="contact-insert">Insertar moneda para continuar</h3>
+        <p data-i18n="contact-desc">Abierto a oportunidades laborales remotas, híbridas y colaboraciones freelance puntuales.</p>
+        <a href="mailto:juan.cabrera081601@gmail.com" class="btn" data-i18n="contact-btn">Enviar un correo</a>
       </div>
       <div class="contact-side">
         <ul class="contact-list">
@@ -184,18 +183,18 @@
         <h3 id="galleryTitle">Galería</h3>
         <p id="galleryDesc"></p>
       </div>
-      <button class="modal-close" onclick="closeGallery()">✕ Cerrar</button>
+      <button class="modal-close" onclick="closeGallery()" data-i18n="modal-close">✕ Cerrar</button>
     </div>
 
     <!-- Pestañas de Filtro -->
     <div class="gallery-tabs">
-      <button class="tab-btn active" id="tabImages" onclick="switchTab('images')">Posts</button>
-       <button class="tab-btn" id="tabVideos" onclick="switchTab('videos')">Reels y Motion Graphics</button>
-        <button class="tab-btn" id="tabDocs" onclick="switchTab('docs')">Casos (PDF)</button>
-        <button class="tab-btn" id="tabGifs" onclick="switchTab('gifs')">Firmas Animadas</button>
-        <button class="tab-btn" id="tabBranding" onclick="switchTab('branding')">Branding</button>
-        <button class="tab-btn" id="tabDoblaje" onclick="switchTab('doblaje_videos')">Doblaje y YouTube</button>
-        <button class="tab-btn" id="tabBanners" onclick="switchTab('banners')">Banners Web</button>
+      <button class="tab-btn active" id="tabImages" onclick="switchTab('images')" data-i18n="tab-posts">Posts</button>
+      <button class="tab-btn" id="tabVideos" onclick="switchTab('videos')" data-i18n="tab-videos">Reels y Motion Graphics</button>
+      <button class="tab-btn" id="tabDocs" onclick="switchTab('docs')" data-i18n="tab-docs">Casos (PDF)</button>
+      <button class="tab-btn" id="tabGifs" onclick="switchTab('gifs')" data-i18n="tab-gifs">Firmas Animadas</button>
+      <button class="tab-btn" id="tabBranding" onclick="switchTab('branding')">Branding</button>
+      <button class="tab-btn" id="tabDoblaje" onclick="switchTab('doblaje_videos')" data-i18n="tab-dub">Doblaje y YouTube</button>
+      <button class="tab-btn" id="tabBanners" onclick="switchTab('banners')" data-i18n="tab-banners">Banners Web</button>
     </div>
 
     <div class="gallery-grid" id="galleryGrid"></div>
@@ -205,8 +204,6 @@
 <!-- Lightbox (Imagen ampliada) -->
 <div class="lightbox-backdrop" id="lightboxModal" onclick="if(event.target===this) closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">✕ Cerrar</button>
-  
-  <!-- Botones de navegación -->
   <button class="lightbox-nav prev" onclick="changeLightboxImage(-1)" aria-label="Imagen anterior">❮</button>
   <button class="lightbox-nav next" onclick="changeLightboxImage(1)" aria-label="Siguiente imagen">❯</button>
 

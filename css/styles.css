@@ -1124,3 +1124,25 @@ footer {
     flex: 0 0 100%;
   }
 }
+
+/* ---------- selector de idioma ---------- */
+.lang-toggle {
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  color: var(--ink-dim);
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: all .15s ease;
+}
+
+.lang-toggle:hover {
+  border-color: var(--cyan);
+  color: var(--ink);
+}
+
+.lang-toggle .active-lang {
+  color: var(--amber);
+  font-weight: 700;
+}
