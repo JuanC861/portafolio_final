@@ -137,8 +137,8 @@ navLinks.querySelectorAll('a').forEach(a => {
 // =================================================================
 const GALLERIES = {
   flyers: {
-    title: "Flyers & Maquetación",
-    desc: "Selecciona una imagen para verla en grande.",
+    title: "Flyers & Material Comercial",
+    desc: "Diseño publicitario y material promocional B2B enfocado en jerarquía de información y conversión clara.",
     images: [
       "imagenes/flyer1.webp",
       "imagenes/flyer2.webp",
@@ -174,8 +174,8 @@ const GALLERIES = {
         ]
   },
     uxui: {
-    title: "UX/UI & Casos de Estudio",
-    desc: "Explora mis procesos de diseño y soluciones de experiencia de usuario.",
+    title: "Diseño Web & Casos de Estudio",
+    desc: "Rediseño de interfaces, experiencia de usuario y arquitectura de información documentada paso a paso.",
     images: [],
     videos: [],
     docs: [
@@ -187,8 +187,8 @@ const GALLERIES = {
     ]
   },
   branding: {
-    title: "Branding e Identidad",
-    desc: "Diseño de marcas y firmas animadas.",
+    title: "Identidad Visual & Branding",
+    desc: "Sistemas visuales integrales: logotipos, paletas tipográficas, manuales de marca y assets digitales.",
     banners: [
       "branding_imagenes/easter_banner.webp",
       "branding_imagenes/ppf_banner.webp",
@@ -211,8 +211,8 @@ const GALLERIES = {
     ]
   },
   doblaje: {
-    title: "Doblaje y YouTube",
-    desc: "Prácticas de doblaje, fandubs y contenido para YouTube.",
+    title: "Producción Multimedia & Audio",
+    desc: "Guion, locución y narración digital para canales de difusión, explorando el lado narrativo del contenido.",
     doblaje_videos: [
       {
         title: "Práctica de Doblaje: El Increible Castillo del Vagabundo",
